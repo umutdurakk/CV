@@ -1,0 +1,43 @@
+﻿@using CV.Models.Entity
+@model List<TblYetenekler>
+
+
+<!-- Skills-->
+
+
+<section class="resume-section" id="skills">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Yetenekler</h2>
+        <div class="subheading mb-3">Programming Languages & Tools</div>
+        <ul class="list-inline dev-icons">
+            <li class="list-inline-item"><i class="fab fa-html5"></i></li>
+            <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
+            <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
+            <li class="list-inline-item"><i class="fab fa-angular"></i></li>
+            
+            <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
+           
+            <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
+            
+        </ul>
+        <div class="subheading mb-3">Workflow</div>
+        <table class="table table-borderless col-md-3">
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td><i class="fa fa-star"></i> @item.Yetenek</td>
+                    <td>
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-danger" style="width:@item.Derece%"></div>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+            }
+        </table>
+        </div>
+</section>
+
+<hr class="m-0" />

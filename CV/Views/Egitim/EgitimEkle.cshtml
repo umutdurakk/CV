@@ -1,0 +1,31 @@
+﻿@model CV.Models.Entity.TblEgitimlerim
+@{
+    ViewBag.Title = "EgitimEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h4>Yeni Egitim Ekleme Sayfası</h4>
+<form class="form-group " method="post">
+
+    <label>Başlık</label>
+    <input type="text" name="Baslik" class="form-control" />
+    @Html.ValidationMessageFor(x => x.Baslik, "", new { @style = "color:red" })<br />
+
+    <label>Alt Başlık1</label>
+    <input type="text" name="AltBaslik1" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AltBaslik1, "", new { @style = "color:red" })<br />
+    <label>Alt başlık2</label>
+    <input type="text" name="AltBaslik2" class="form-control" />
+    @Html.ValidationMessageFor(x => x.AltBaslik2, "", new { @style = "color:red" })<br />
+    <label>Gno</label>
+    <input type="tel" name="GNO" class="form-control" />
+    @Html.ValidationMessageFor(x => x.GNO, "", new { @style = "color:red" })<br />
+    <label>Tarih</label>
+    <input type="text" name="Tarih" class="form-control" />
+    @Html.ValidationMessageFor(x => x.Tarih, "", new { @style = "color:red" })<br />
+    <button type="submit" class="btn btn-dark mt-3">Kaydet</button>
+</form>
+
+

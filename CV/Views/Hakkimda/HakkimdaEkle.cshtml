@@ -1,0 +1,31 @@
+﻿@using CV.Models.Entity
+@model List<TblHakkimda>
+@{
+    ViewBag.Title = "HakkımdaEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Yeni Deneyim Ekleme Sayfası</h4>
+<form class="form-group" method="post">
+    <label>Ad</label>
+    <input type="text" name="Ad" class="form-control" />
+
+    <label>Soyad</label>
+    <input type="text" name="Soyad" class="form-control" />
+
+    <label>Adres</label>
+    <input type="text" name="Adres" class="form-control" />
+
+    <label>Telefon</label>
+    <input type="text" name="Telefon" class="form-control" />
+
+    <label>Mail</label>
+    <input type="text" name="Mail" class="form-control" />
+
+    <label>Açıklama</label>
+    <textarea name="Aciklama" class="form-control" rows="5"></textarea>
+    <button type="submit" class="btn btn-dark mt-3">Kaydet</button>
+</form>
+
+

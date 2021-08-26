@@ -1,0 +1,47 @@
+﻿@using CV.Models.Entity
+@model TblHakkimda
+@{
+    ViewBag.Title = "HakkımdaDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Hakkımda Düzenleme Sayfası</h4>
+@using (Html.BeginForm("HakkimdaDuzenle", "Hakkimda", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-md-3">
+        @Html.HiddenFor(model => model.Resim)
+        <img src="~/Images/@Model.Resim" class="img-thumbnail rounded-circle mb-3" width="128" height="128" />
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="userImage" name="userImage">
+            <label class="custom-file-label" for="customFile">Dosya Seçiniz</label>
+        </div>
+        <div class="pl-3">
+            <i class="fa fa-info-circle mr-2"></i>
+            <small><i>Lütfen jpg, jpeg ya da png formatı kullanın.</i></small>
+        </div>
+    </div>
+
+    @Html.Label("Ad")
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+
+    @Html.Label("Soyad")
+    @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+
+    @Html.Label("Adres")
+    @Html.TextBoxFor(x => x.Adres, new { @class = "form-control" })
+
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control", type = "tel" })
+
+    @Html.Label("Mail")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+
+
+
+    @Html.Label("Acıklama")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <button type="submit" class="btn btn-dark mt-3">Güncelle</button>
+}
+
+

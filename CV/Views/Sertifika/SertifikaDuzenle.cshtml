@@ -1,0 +1,22 @@
+﻿@using CV.Models.Entity
+@model TblSertifikalarım
+@{
+    ViewBag.Title = "SertifikaDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Sertifika Düzenleme Sayfası</h4>
+<form method="post">
+    @Html.Label("Baslik")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+
+    @Html.Label("Aciklama")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+
+
+    <button type="submit" class="btn btn-dark mt-3">Güncelle</button>
+</form>
+
+
+

@@ -1,0 +1,26 @@
+﻿@using CV.Models.Entity
+@model List<TblSertifikalarım>
+
+
+<!-- Awards-->
+
+
+<section class="resume-section" id="awards">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Sertifikalar</h2>
+        @foreach (var item in Model)
+        {
+
+            <ul class="fa-ul mb-1">
+                <li>
+                    <div>
+                        <h4>-@item.Baslik</h4>
+                    </div>
+                    <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                    @item.Aciklama
+                </li>
+            </ul>
+
+         }
+        </div>
+</section>

@@ -1,0 +1,82 @@
+﻿@using CV.Models.Entity
+@model List<TblHakkimda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="hold-transition sidebar-mini mt-5">
+    <div class="wrapper mt-3">
+        <!-- Content Wrapper. Contains page content -->
+        <!-- Main content -->
+        <section class="content  ">
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Hakkımda</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body p-0">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>AD</th>
+                                            <th>Soyad</th>
+                                            <th>Adres</th>
+                                            <th>Telefon</th>
+                                            <th>Mail</th>
+                                            <th>Aciklama</th>
+                                            <th style="width: 165px">İşlemler</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.ID</td>
+                                                <td>@item.Ad</td>
+                                                <td>@item.Soyad</td>
+                                                <td>@item.Adres</td>
+                                                <td>@item.Telefon</td>
+                                                <td>@item.Mail</td>
+                                                <td>@item.Aciklama</td>
+                                                <td>
+                                                    <a href="/Hakkimda/HakkimdaSil/@item.ID"
+                                                       class="btn btn-danger">Sil</a>
+                                                    <a href="/Hakkimda/HakkimdaDuzenle/@item.ID"
+                                                       class="btn btn-info">Duzenle</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <a href="/Hakkimda/HakkimdaEkle/" class="btn btn-primary mt-3 ml-2 mb-3">Yeni Hakkımda Ekle</a>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+            <!-- /.row -->
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+
+
+    </div>
+
+</body>
+</html>
